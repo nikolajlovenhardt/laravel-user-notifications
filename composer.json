@@ -1,14 +1,13 @@
 {
-  "name": "nikolajlovenhardt/laravel-private-messaging",
+  "name": "nikolajlovenhardt/laravel-user-notifications",
   "type": "library",
-  "description": "PM (Private Messaging) for Laravel 5.*",
+  "description": "User notifications for Laravel 5.*",
   "keywords": [
     "laravel",
-    "pm",
-    "private messaging",
-    "private messages"
+    "notifications",
+    "user"
   ],
-  "homepage": "https://github.com/nikolajlovenhardt/laravel-private-messaging",
+  "homepage": "https://github.com/nikolajlovenhardt/laravel-user-notifications",
   "license": "MIT",
   "authors": [
     {
@@ -24,7 +23,8 @@
   "require-dev": {
     "phpunit/phpunit": "~4.0",
     "codeclimate/php-test-reporter": "dev-master",
-    "phpmd/phpmd" : "1.4.*"
+    "phpmd/phpmd" : "1.4.*",
+    "doctrine/orm": "2.5.4"
   },
   "autoload": {
     "psr-4": {

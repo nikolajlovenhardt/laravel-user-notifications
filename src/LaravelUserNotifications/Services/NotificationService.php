@@ -26,7 +26,7 @@ class NotificationService
      * @param UserInterface $user
      * @return array|\LaravelUserNotifications\Models\NotificationInterface[]
      */
-    public function findByUser(UserInterface $user)
+    public function findByUser($user)
     {
         return $this->notificationMapper->findByUser($user->getId());
     }
@@ -37,7 +37,7 @@ class NotificationService
      * @param UserInterface $user
      * @return array|\LaravelUserNotifications\Models\NotificationInterface[]
      */
-    public function findUnreadByUser(UserInterface $user)
+    public function findUnreadByUser($user)
     {
         return $this->notificationMapper->findUnreadByUser($user->getId());
     }

@@ -8,6 +8,7 @@ use LaravelUserNotifications\Models\Notification;
 
 class NotificationMapper implements NotificationMapperInterface
 {
+    /** @var \Doctrine\Common\ */
     protected $objectManager;
 
     public function __construct($objectManager)
