@@ -1,2 +1,11 @@
+engines:
+  phpcodesniffer:
+    enabled: true
+    config:
+      file_extensions: "php"
+      standard: "PSR2"
+ratings:
+  paths:
+  - "**.php"
 exclude_paths:
 - tests/*
