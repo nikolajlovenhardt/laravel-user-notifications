@@ -43,7 +43,7 @@ class NotificationService
     }
 
     /**
-     * Number of unread messages
+     * Number of unread notifications
      *
      * @param UserInterface $user
      * @return int

@@ -28,7 +28,7 @@
     "doctrine/orm": "2.5.4"
   },
   "autoload": {
-    "psr-0": {
+    "psr-4": {
       "LaravelUserNotifications\\": "src/LaravelUserNotifications"
     }
   },
