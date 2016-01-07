@@ -2,6 +2,7 @@
 
 namespace LaravelUserNotifications;
 
+use Doctrine\ORM\Mapping\Driver\XmlDriver;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use LaravelUserNotifications\Options\ModuleOptions;
@@ -33,6 +34,14 @@ class LaravelUserNotificationsProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfig();
+
+        if (class_exists('\Doctrine\ORM\EntityManager')) {
+            /** @var \Doctrine\ORM\EntityManager $entityManager */
+            $entityManager = app('Doctrine\ORM\EntityManager');
+
+            $xmlDriver = new XmlDriver(__DIR__ . '/../../config/doctrine/');
+            $entityManager->getConfiguration()->setMetadataDriverImpl($xmlDriver);
+        }
 
         // Register services
         $this->registerServices();

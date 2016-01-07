@@ -2,32 +2,25 @@
 
 namespace LaravelUserNotifications\Models;
 
+use Rhumsaa\Uuid\Uuid;
+
 class Notification implements NotificationInterface
 {
-    /**
-     * @var string
-     */
     protected $id;
 
-    /**
-     * @var string
-     */
     protected $text;
 
-    /**
-     * @var int
-     */
     protected $read;
 
-    /**
-     * @var \DateTime
-     */
     protected $date;
 
-    /**
-     * @var string
-     */
     protected $user;
+
+    public function __construct()
+    {
+        $this->id = Uuid::uuid4();
+        $this->date = new \DateTime();
+    }
 
     /**
      * @return string
