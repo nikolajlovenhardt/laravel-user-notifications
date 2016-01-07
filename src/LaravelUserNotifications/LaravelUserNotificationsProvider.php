@@ -11,6 +11,10 @@ use LaravelUserNotifications\Exceptions\InvalidMapperException;
 use LaravelUserNotifications\Mappers\NotificationMapperInterface;
 use LaravelUserNotifications\Exceptions\InvalidConfigurationException;
 
+/**
+ * Class LaravelUserNotificationsProvider
+ * @package LaravelUserNotifications
+ */
 class LaravelUserNotificationsProvider extends ServiceProvider
 {
     /**
