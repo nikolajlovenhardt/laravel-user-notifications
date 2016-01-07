@@ -5,6 +5,6 @@ Set the provider to `LaravelUserNotifications\Mappers\Eloquent\NotificationMappe
 `config/user-notifications.php`
 ```php
 return [
-    'notificationMapper' => LaravelUserNotifications\Mappers\DoctrineORM\EloquentMapper::class,
+    'notificationMapper' => LaravelUserNotifications\Mappers\Eloquent\NotificationMapper::class,
 ];
 ```
