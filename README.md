@@ -10,4 +10,4 @@
 ],
 ```
 
-- Run `$ php artisan vendor:publish` to publish the configuration file `config/private-messaging.php`
+- Run `$ php artisan vendor:publish` to publish the configuration file `config/user-notifications.php`
