@@ -2,7 +2,7 @@
 
 namespace LaravelUserNotifications;
 
-use Doctrine\ORM\Mapping\Driver\XmlDriver;
+use LaravelUserNotifications\Mappers;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use LaravelUserNotifications\Options\ModuleOptions;
@@ -39,7 +39,7 @@ class LaravelUserNotificationsProvider extends ServiceProvider
             /** @var \Doctrine\ORM\EntityManager $entityManager */
             $entityManager = app('Doctrine\ORM\EntityManager');
 
-            $xmlDriver = new XmlDriver(__DIR__ . '/../../config/doctrine/');
+            $xmlDriver = new \Doctrine\ORM\Mapping\Driver\XmlDriver(__DIR__ . '/../../config/doctrine/');
 
             /** @var \LaravelDoctrine\ORM\Extensions\MappingDriverChain $metaDriver */
             $metaDriver = $entityManager->getConfiguration()->getMetadataDriverImpl();
@@ -66,6 +66,7 @@ class LaravelUserNotificationsProvider extends ServiceProvider
      */
     protected function registerServices()
     {
+        // Notification service
         $this->app->bind(NotificationService::class, function (Application $app) {
             if (!$config = config('user-notifications')) {
                 throw new InvalidConfigurationException();
@@ -86,5 +87,12 @@ class LaravelUserNotificationsProvider extends ServiceProvider
 
             return new NotificationService($eventService, $notificationMapper);
         });
+
+        // Doctrine notification mapper
+        $this->app->bind(Mappers\DoctrineORM\NotificationMapper::class, function (Application $app) {
+            $objectManager = $app->make('Doctrine\ORM\EntityManager');
+            return new Mappers\DoctrineORM\NotificationMapper($objectManager);
+        });
+
     }
 }
