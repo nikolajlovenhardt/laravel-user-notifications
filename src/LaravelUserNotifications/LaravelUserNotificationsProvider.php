@@ -67,7 +67,7 @@ class LaravelUserNotificationsProvider extends ServiceProvider
     protected function registerServices()
     {
         $this->app->bind(NotificationService::class, function (Application $app) {
-            if (!$config = app('user-notifications')) {
+            if (!$config = config('user-notifications')) {
                 throw new InvalidConfigurationException();
             }
 
