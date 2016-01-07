@@ -6,7 +6,7 @@ use LaravelUserNotifications\Mappers\NotificationMapperInterface;
 use LaravelUserNotifications\Models\NotificationInterface;
 use LaravelUserNotifications\Models\UserInterface;
 
-class NotificationService
+class NotificationService implements NotificationServiceInterface
 {
     /** @var EventService */
     protected $eventService;
