@@ -4,12 +4,12 @@ namespace LaravelUserNotifications;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use LaravelUserNotifications\Exceptions\InvalidConfigurationException;
-use LaravelUserNotifications\Exceptions\InvalidMapperException;
-use LaravelUserNotifications\Mappers\NotificationMapperInterface;
 use LaravelUserNotifications\Options\ModuleOptions;
 use LaravelUserNotifications\Services\EventService;
 use LaravelUserNotifications\Services\NotificationService;
+use LaravelUserNotifications\Exceptions\InvalidMapperException;
+use LaravelUserNotifications\Mappers\NotificationMapperInterface;
+use LaravelUserNotifications\Exceptions\InvalidConfigurationException;
 
 class LaravelUserNotificationsProvider extends ServiceProvider
 {
@@ -62,7 +62,7 @@ class LaravelUserNotificationsProvider extends ServiceProvider
             $notificationMapper = $app->make($mappers['notificationMapper']);
 
             if (!$notificationMapper instanceof NotificationMapperInterface) {
-                throw new InvalidMapperException($notificationMapper, NotificationMapperInterface::);
+                throw new InvalidMapperException($notificationMapper, NotificationMapperInterface::class);
             }
 
             /** @var EventService $eventService */
