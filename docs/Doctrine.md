@@ -17,14 +17,12 @@ Example of notification relation
 
 namespace App\Entities;
 
-use App\Entities\Event\Event;
-use App\Entities\Notification\Notification;
-use LaravelDoctrine\ORM\Contracts\Auth\Authenticatable as LaravelDoctrineAuthenticatable;
-use LaravelUserNotifications\Models\UserInterface;
 use Rhumsaa\Uuid\Uuid;
 use Doctrine\ORM\Mapping as ORM;
 use LaravelDoctrine\ORM\Auth\Authenticatable;
 use Doctrine\Common\Collections\ArrayCollection;
+use LaravelUserNotifications\Models\UserInterface;
+use LaravelDoctrine\ORM\Contracts\Auth\Authenticatable as LaravelDoctrineAuthenticatable;
 
 /**
  * @ORM\Entity
