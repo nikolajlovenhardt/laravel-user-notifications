@@ -28,12 +28,12 @@
   },
   "autoload": {
     "psr-4": {
-      "LaravelPM\\": "src/LaravelPM"
+      "LaravelUserNotifications\\": "src/LaravelUserNotifications"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "LaravelPMTests\\": "tests/"
+      "LaravelUserNotificationsTests\\": "tests/"
     }
   }
 }
