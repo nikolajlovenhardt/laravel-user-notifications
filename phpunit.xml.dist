@@ -22,6 +22,7 @@
             <directory suffix=".php">./tests</directory>
 
             <exclude>
+                <file>./src/LaravelUserNotificationsProvider.php</file>
                 <directory>./src/config</directory>
             </exclude>
         </whitelist>
