@@ -1,9 +1,7 @@
 <?php
 
 return [
-    'userModel' => '',
-
     'mappers' => [
-        LaravelUserNotifications\Mappers\DoctrineORM\NotificationMapper::class,
+        'notificationMapper' => LaravelUserNotifications\Mappers\DoctrineORM\NotificationMapper::class,
     ],
 ];

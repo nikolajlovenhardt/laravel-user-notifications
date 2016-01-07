@@ -4,7 +4,6 @@ namespace LaravelUserNotifications\Mappers\DoctrineORM;
 
 use LaravelUserNotifications\Mappers\NotificationMapperInterface;
 use LaravelUserNotifications\Models\NotificationInterface;
-use LaravelUserNotifications\Mappers\NotificationMapperInterface;
 use LaravelUserNotifications\Models\Notification;
 
 class NotificationMapper implements NotificationMapperInterface
@@ -25,6 +24,47 @@ class NotificationMapper implements NotificationMapperInterface
     public function find($id)
     {
         return $this->objectManager->find(Notification::class, $id);
+    }
+
+    /**
+     * Find notifications by user
+     *
+     * @param string $userId
+     * @return NotificationInterface[]|array
+     */
+    public function findByUser($userId)
+    {
+        return $this->objectManager->getRepository(Notification::class)->findBy([
+            'user' => $userId,
+        ]);
+    }
+
+    /**
+     * Find unread notifications by user
+     *
+     * @param string $userId
+     * @return NotificationInterface[]|array
+     */
+    public function findUnreadByUser($userId)
+    {
+        return $this->objectManager->getRepository(Notification::class)->findBy([
+            'user' => $userId,
+            'read' => 0,
+        ]);
+    }
+
+    /**
+     * Mark notification as read
+     *
+     * @param NotificationInterface $notification
+     * @return bool
+     */
+    public function markRead(NotificationInterface $notification)
+    {
+        $notification->setRead(true);
+        $this->save($notification);
+
+        return true;
     }
 
     /**
