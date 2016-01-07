@@ -2,6 +2,7 @@
 
 namespace LaravelUserNotifications\Providers\Mappers\DoctrineORM;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use LaravelUserNotifications\Mappers\DoctrineORM\NotificationMapper;
 
