@@ -88,7 +88,7 @@ class NotificationService implements NotificationServiceInterface
 
         $result = $this->notificationMapper->save($notification);
 
-        $this->eventService->fire('user.notifications.save.pre', [
+        $this->eventService->fire('user.notifications.save.post', [
             'notification' => $notification,
         ]);
 
