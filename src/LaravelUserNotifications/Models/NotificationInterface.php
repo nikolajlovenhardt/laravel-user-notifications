@@ -31,4 +31,11 @@ interface NotificationInterface
      * @return string
      */
     public function getUser();
+
+    /**
+     * Read
+     *
+     * @return int
+     */
+    public function getRead();
 }

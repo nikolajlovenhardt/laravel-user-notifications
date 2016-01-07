@@ -15,6 +15,11 @@ class Notification implements NotificationInterface
     protected $text;
 
     /**
+     * @var int
+     */
+    protected $read;
+
+    /**
      * @var \DateTime
      */
     protected $date;
@@ -86,5 +91,21 @@ class Notification implements NotificationInterface
     public function setUser($user)
     {
         $this->user = $user;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRead()
+    {
+        return $this->read;
+    }
+
+    /**
+     * @param int $read
+     */
+    public function setRead($read)
+    {
+        $this->read = $read;
     }
 }
