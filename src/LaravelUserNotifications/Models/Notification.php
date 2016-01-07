@@ -6,14 +6,29 @@ use Rhumsaa\Uuid\Uuid;
 
 class Notification implements NotificationInterface
 {
+    /**
+     * @var string
+     */
     protected $id;
 
+    /**
+     * @var string
+     */
     protected $text;
 
+    /**
+     * @var boolean
+     */
     protected $read;
 
+    /**
+     * @var \DateTime
+     */
     protected $date;
 
+    /**
+     * @var string|mixed
+     */
     protected $user;
 
     public function __construct()
