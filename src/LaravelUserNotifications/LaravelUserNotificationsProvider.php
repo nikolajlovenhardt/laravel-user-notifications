@@ -40,7 +40,10 @@ class LaravelUserNotificationsProvider extends ServiceProvider
             $entityManager = app('Doctrine\ORM\EntityManager');
 
             $xmlDriver = new XmlDriver(__DIR__ . '/../../config/doctrine/');
-            $entityManager->getConfiguration()->setMetadataDriverImpl($xmlDriver);
+
+            /** @var \LaravelDoctrine\ORM\Extensions\MappingDriverChain $metaDriver */
+            $metaDriver = $entityManager->getConfiguration()->getMetadataDriverImpl();
+            $metaDriver->addDriver($xmlDriver, 'LaravelUserNotifications');
         }
 
         // Register services
