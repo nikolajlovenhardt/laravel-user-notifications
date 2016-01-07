@@ -25,7 +25,11 @@ class LaravelUserNotificationsProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../../config/config.php' => config_path('user-notifications.php'),
-        ]);
+        ], 'config');
+
+        $this->publishes([
+            __DIR__ . '/../../config/migrations/' => database_path('migrations')
+        ], 'migrations');
     }
 
     /**

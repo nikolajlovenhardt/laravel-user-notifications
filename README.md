@@ -18,7 +18,7 @@ User notifications for Laravel 5.*. Support for eloquent & doctrine2 orm ([larav
 ],
 ```
 
-- Run `$ php artisan vendor:publish` to publish the configuration file `config/user-notifications.php`
+- Run `$ php artisan vendor:publish --provider="LaravelUserNotifications\LaravelUserNotificationsProvider" --tag="config"` to publish the configuration file `config/user-notifications.php`
 
 ### Documentation (Mappers)
 
