@@ -24,7 +24,7 @@ use LaravelUserNotifications\Models\Notification;
 
 class NotificationMapper implements NotificationMapperInterface
 {
-    /** @var \Doctrine\Common\ */
+    /** @var \Doctrine\Common\Persistence\ObjectManager */
     protected $objectManager;
 
     public function __construct($objectManager)
