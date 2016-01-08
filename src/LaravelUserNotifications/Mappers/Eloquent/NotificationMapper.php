@@ -57,6 +57,7 @@ class NotificationMapper implements NotificationMapperInterface
     {
         /** @var \Illuminate\Database\Eloquent\Collection $collection */
         $collection = EloquentNotification::where('user', '=', $userId)->get();
+
         return $collection->all();
     }
 
@@ -68,25 +69,36 @@ class NotificationMapper implements NotificationMapperInterface
      */
     public function markRead(NotificationInterface $notification)
     {
+        $notification->read = 1;
+        $this->save($notification);
+
+        return true;
     }
 
     /**
      * Save notification
      *
-     * @param NotificationInterface $notification
+     * @param EloquentNotification|NotificationInterface $notification
      * @return NotificationInterface
      */
     public function save(NotificationInterface $notification)
     {
+        $notification->save();
+
+        return $notification;
     }
 
     /**
      * Remove notification
      *
-     * @param NotificationInterface $notification
+     * @param EloquentNotification|NotificationInterface $notification
      * @return bool
      */
     public function remove(NotificationInterface $notification)
     {
+        $notification->delete();
+
+        return true;
     }
+
 }
