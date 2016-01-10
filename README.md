@@ -12,4 +12,4 @@ Install with composer `$ composer require nikolajlovenhardt/laravel-user-notific
 
 ## Documentation
 
-- Go to [Getting started](01 Getting started.md)
+- Go to [Getting started](docs/01 Getting started.md)
