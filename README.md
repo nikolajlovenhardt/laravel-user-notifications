@@ -8,19 +8,8 @@
 
 User notifications for Laravel 5.*. Support for eloquent & doctrine2 orm ([laravel-doctrine](http://github.com/laravel-doctrine/orm)).
 
-### Setup
-- Run `$ composer require nikolajlovenhardt/laravel-user-notifications`
+Install with composer `$ composer require nikolajlovenhardt/laravel-user-notifications`
 
-- Add provider
-```php
-'providers' => [
-    LaravelUserNotifications\LaravelUserNotificationsProvider::class,
-],
-```
+## Documentation
 
-- Run `$ php artisan vendor:publish --provider="LaravelUserNotifications\LaravelUserNotificationsProvider" --tag="config"` to publish the configuration file `config/user-notifications.php`
-
-### Documentation (Mappers)
-
-- [Eloquent guide](docs/Eloquent.md)
-- [Doctrine2 (laravel-doctrine) guide](docs/Doctrine.md)
+- Go back to (Getting started)[01 Getting started.md]

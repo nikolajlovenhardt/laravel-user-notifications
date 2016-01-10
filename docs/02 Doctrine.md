@@ -1,6 +1,6 @@
-## Setup
+## LaravelDoctrine setup
 
-Set the provider to `LaravelUserNotifications\Mappers\DoctrineORM\NotificationMapper`
+Set the provider to `LaravelUserNotifications\Mappers\DoctrineORM\NotificationMapper` in `config/user-notifications.php`
 
 `config/user-notifications.php`
 ```php
@@ -9,8 +9,13 @@ return [
 ];
 ```
 
-### Entity
-Example of notification relation
+## Relation
+
+Add the notification relation in your User entity
+
+### Example with annotations
+
+This is an example with doctrine annotations
 
 ```php
 <?php
@@ -91,3 +96,6 @@ class User implements LaravelDoctrineAuthenticatable, UserInterface
     }
 }
 ```
+
+- Go back to (Getting started)[01 Getting started.md]
+- Continue to (Usage)[03 Usage.md]

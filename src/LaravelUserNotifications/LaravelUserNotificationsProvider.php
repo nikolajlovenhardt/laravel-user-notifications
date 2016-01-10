@@ -113,6 +113,5 @@ class LaravelUserNotificationsProvider extends ServiceProvider
             $objectManager = $app->make('Doctrine\ORM\EntityManager');
             return new Mappers\DoctrineORM\NotificationMapper($objectManager);
         });
-
     }
 }
