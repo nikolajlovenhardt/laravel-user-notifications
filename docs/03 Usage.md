@@ -46,5 +46,5 @@ class DemoController
 }
 ```
 
-- Go back to (Eloquent)[02 Eloquent.md]
-- Go back to (Doctrine)[02 Doctirne.md]
+- Go back to [Eloquent](02 Eloquent.md)
+- Go back to [Doctrine](02 Doctirne.md)

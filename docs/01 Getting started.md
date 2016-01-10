@@ -34,5 +34,5 @@ This step goes through the setup with Eloquent and LaravelDoctrine.
 
 Setup with:
 
-- (Eloquent)[02 Eloquent.md]
-- (LaravelDoctrine)[02 Doctirne.md]
+- [Eloquent](02 Eloquent.md)
+- [LaravelDoctrine](02 Doctirne.md)

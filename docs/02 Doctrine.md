@@ -97,5 +97,5 @@ class User implements LaravelDoctrineAuthenticatable, UserInterface
 }
 ```
 
-- Go back to (Getting started)[01 Getting started.md]
-- Continue to (Usage)[03 Usage.md]
+- Go back to [Getting started](01 Getting started.md)
+- Continue to [Usage](03 Usage.md)
