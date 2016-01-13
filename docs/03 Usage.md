@@ -2,15 +2,15 @@
 
 ## Service
 
-Example of how to use the `LaravelUserNotifications\NotificationService`
+Example of how to use the `LaravelUserNotifications\Services\NotificationService`
 
 ### Dependency injection
 
 The `NotificationService` can be injected using:
 
 ```php
-/** @var \LaravelUserNotifications\NotificationServiceInterface */
-$notificationService = app(LaravelUserNotifications\NotificationService::class);
+/** @var \LaravelUserNotifications\Services\NotificationServiceInterface */
+$notificationService = app(LaravelUserNotifications\Services\NotificationService::class);
 ```
 
 ```php
@@ -18,8 +18,8 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\User;
-use LaravelUserNotifications\NotificationService;
-use LaravelUserNotifications\NotificationServiceInterface;
+use LaravelUserNotifications\Services\NotificationService;
+use LaravelUserNotifications\Services\NotificationServiceInterface;
 
 class DemoController
 {
