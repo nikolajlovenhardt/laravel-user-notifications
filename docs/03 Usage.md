@@ -4,6 +4,14 @@
 
 Example of how to use the `LaravelUserNotifications\Services\NotificationService`
 
+Methods:
+- `findByUser` Find all notifications for user
+- `findUnreadByUser` Find all unread notifications for user
+- `countUnreadByUser` Number of unread notifications for user
+- `markRead` Mark specific notification as read
+- `markAllRead` Mark all notifications for user as read
+- `save` Save notification
+
 ### Dependency injection
 
 The `NotificationService` can be injected using:
@@ -47,4 +55,4 @@ class DemoController
 ```
 
 - Go back to [Eloquent](02 Eloquent.md)
-- Go back to [Doctrine](02 Doctirne.md)
+- Go back to [Doctrine](02 Doctrine.md)
