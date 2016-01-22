@@ -122,15 +122,20 @@ class NotificationMapperTest extends PHPUnit_Framework_TestCase
                 'getId',
                 'getText',
                 'getDate',
+                'getUpdated',
+                'setUpdated',
                 'getUser',
                 'getRead',
-                'setRead'
+                'setRead',
             ])
             ->getMock();
 
         $notification->expects($this->at(0))
             ->method('setRead')
             ->with(true);
+
+        $notification->expects($this->at(1))
+            ->method('setUpdated');
 
         $this->objectManager->expects($this->at(0))
             ->method('persist')
@@ -147,7 +152,21 @@ class NotificationMapperTest extends PHPUnit_Framework_TestCase
     public function testSave()
     {
         /** @var NotificationInterface $notification */
-        $notification = $this->getMock(NotificationInterface::class);
+        $notification = $this->getMockBuilder(NotificationInterface::class)
+            ->setMethods([
+                'getId',
+                'getText',
+                'getDate',
+                'getUpdated',
+                'setUpdated',
+                'getUser',
+                'getRead',
+                'setRead',
+            ])
+            ->getMock();
+
+        $notification->expects($this->at(0))
+            ->method('setUpdated');
 
         $this->objectManager->expects($this->at(0))
             ->method('persist')
