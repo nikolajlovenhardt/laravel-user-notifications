@@ -10,7 +10,8 @@
         </id>
         <field name="text" type="text" />
         <field name="date" type="datetime"/>
+        <field name="updated" column="updated_at" type="datetime"/>
         <field name="user" type="string" length="255" />
-        <field name="read" type="integer" length="2" />
+        <field name="read" column="`read`" type="integer" length="2" />
     </entity>
 </doctrine-mapping>

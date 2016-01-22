@@ -58,6 +58,15 @@ interface NotificationServiceInterface
      */
     public function markRead(NotificationInterface $notification);
 
+
+    /**
+     * Mark all notifications as read
+     *
+     * @param UserInterface $user
+     * @return bool
+     */
+    public function markAllRead(UserInterface $user);
+
     /**
      * Save notification
      *

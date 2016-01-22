@@ -55,6 +55,14 @@ interface NotificationMapperInterface
     public function markRead(NotificationInterface $notification);
 
     /**
+     * Mark all notifications as read
+     *
+     * @param string $userId
+     * @return boolean
+     */
+    public function markAllRead($userId);
+
+    /**
      * Save notification
      *
      * @param NotificationInterface $notification

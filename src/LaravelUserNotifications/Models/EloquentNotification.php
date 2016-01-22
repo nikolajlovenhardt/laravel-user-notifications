@@ -31,7 +31,7 @@ class EloquentNotification extends Model implements NotificationInterface
     protected $table = 'notifications';
 
     /**
-     * Get notification id
+     * Notificaiton ID
      *
      * @return string
      */
@@ -41,7 +41,7 @@ class EloquentNotification extends Model implements NotificationInterface
     }
 
     /**
-     * Get date
+     * Date
      *
      * @return string
      */
@@ -51,7 +51,7 @@ class EloquentNotification extends Model implements NotificationInterface
     }
 
     /**
-     * Get text
+     * Notificaiton text
      *
      * @return string
      */
@@ -61,7 +61,7 @@ class EloquentNotification extends Model implements NotificationInterface
     }
 
     /**
-     * Get user id
+     * User ID
      *
      * @return string
      */
@@ -78,5 +78,15 @@ class EloquentNotification extends Model implements NotificationInterface
     public function getRead()
     {
         return $this->read;
+    }
+
+    /**
+     * Updated
+     *
+     * @return string
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
     }
 }

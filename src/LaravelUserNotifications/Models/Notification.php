@@ -43,6 +43,11 @@ class Notification implements NotificationInterface
     protected $date;
 
     /**
+     * @var \DateTime
+     */
+    protected $updated;
+
+    /**
      * @var string|mixed
      */
     protected $user;
@@ -51,6 +56,7 @@ class Notification implements NotificationInterface
     {
         $this->id = Uuid::uuid4();
         $this->date = new \DateTime();
+        $this->updated = new \DateTime();
     }
 
     /**
@@ -131,5 +137,21 @@ class Notification implements NotificationInterface
     public function setRead($read)
     {
         $this->read = $read;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * @param \DateTime $updated
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
     }
 }

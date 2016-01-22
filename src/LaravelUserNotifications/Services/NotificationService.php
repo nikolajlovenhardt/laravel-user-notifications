@@ -91,6 +91,27 @@ class NotificationService implements NotificationServiceInterface
     }
 
     /**
+     * Mark all notifications as read
+     *
+     * @param UserInterface $user
+     * @return bool
+     */
+    public function markAllRead(UserInterface $user)
+    {
+        $this->eventService->fire('user.notifications.markAllRead.pre', [
+            'user' => $user,
+        ]);
+
+        $result =  $this->notificationMapper->markAllRead($user->getId());
+
+        $this->eventService->fire('user.notifications.markAllRead.post', [
+            'user' => $user,
+        ]);
+
+        return $result;
+    }
+
+    /**
      * Save notification
      *
      * @param NotificationInterface $notification

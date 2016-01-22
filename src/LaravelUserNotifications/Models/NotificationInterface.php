@@ -35,6 +35,13 @@ interface NotificationInterface
     public function getDate();
 
     /**
+     * Get updated
+     *
+     * @return string
+     */
+    public function getUpdated();
+
+    /**
      * Get text
      *
      * @return string

@@ -78,8 +78,26 @@ class NotificationMapper implements NotificationMapperInterface
      */
     public function markRead(NotificationInterface $notification)
     {
-        $notification->setRead(true);
+        $notification->setRead(1);
         $this->save($notification);
+
+        return true;
+    }
+
+    /**
+     * Mark all notifications as read
+     *
+     * @param string $userId
+     * @return bool
+     */
+    public function markAllRead($userId)
+    {
+        $notifications = $this->findUnreadByUser($userId);
+
+        foreach ($notifications as $notification) {
+            $notification->setRead(1);
+            $this->save($notification);
+        }
 
         return true;
     }
@@ -92,6 +110,8 @@ class NotificationMapper implements NotificationMapperInterface
      */
     public function save(NotificationInterface $notification)
     {
+        $notification->setUpdated(new \DateTime());
+
         $this->objectManager->persist($notification);
         $this->objectManager->flush();
 

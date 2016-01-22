@@ -76,6 +76,24 @@ class NotificationMapper implements NotificationMapperInterface
     }
 
     /**
+     * Mark all notifications as read
+     *
+     * @param string $userId
+     * @return bool
+     */
+    public function markAllRead($userId)
+    {
+        $notifications = $this->findUnreadByUser($userId);
+
+        foreach ($notifications as $notification) {
+            $notification->read = 1;
+            $this->save($notification);
+        }
+
+        return true;
+    }
+
+    /**
      * Save notification
      *
      * @param EloquentNotification|NotificationInterface $notification
@@ -100,5 +118,4 @@ class NotificationMapper implements NotificationMapperInterface
 
         return true;
     }
-
 }
