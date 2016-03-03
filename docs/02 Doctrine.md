@@ -49,11 +49,7 @@ class User implements LaravelDoctrineAuthenticatable, UserInterface
     /**
      * @var \LaravelUserNotifications\Models\Notification[]|array
      *
-     * @ORM\ManyToMany(targetEntity="LaravelUserNotifications\Models\Notification")
-     * @ORM\JoinTable(name="user_notifications",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="notification_id", referencedColumnName="id", unique=true)}
-     *      )
+     * @ORM\OneToMany(targetEntity="LaravelUserNotifications\Models\Notification", mappedBy="user")
      */
     protected $notifications;
 
