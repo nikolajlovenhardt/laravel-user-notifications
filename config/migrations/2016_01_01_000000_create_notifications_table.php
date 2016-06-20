@@ -33,7 +33,7 @@ class CreateNotificationsTable extends Migration
             $table->text('text');
             $table->dateTime('date');
             $table->string('user', 255);
-            $table->integer('read', 2);
+            $table->boolean('read')->default(false);
         });
     }
 
