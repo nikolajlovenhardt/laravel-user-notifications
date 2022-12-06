@@ -11,3 +11,5 @@ Install with composer `$ composer require nikolajlovenhardt/laravel-user-notific
 ## Documentation
 
 - Go to [Getting started](docs/01 Getting started.md)
+
+- Created by [Wonderfulday.dk](https://wonderfulday.dk/)
